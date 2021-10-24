@@ -3,4 +3,4 @@ Avocados. Fruits that contain numerous nutrients and healthy fat, avocados are b
 
 This web app provides a simple machine learning algorithm that utilizes a random forest regression to predict the price of an avocado based on various parameters. The code was mostly adapted from the official sci-kit learn documentation.
 
-After completing the model, the website was created using joblib and flask to implement the model in a more user-friendly way. A YouTube tutorial (https://youtu.be/UbCWoMf80PY) was also used as a guide through the steps of implementing the flask site.
+After completing the model, the website was created using joblib and flask to implement the model in a more user-friendly way. A YouTube tutorial was also used as a guide through the steps of implementing the flask site.
