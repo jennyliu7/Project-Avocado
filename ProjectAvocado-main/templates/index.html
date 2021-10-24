@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+
+</head>
+
+<body>
+ <div id="App">
+     <div id="header">
+        <img id="logo" src="{{ url_for('static', filename='avocado.png') }}" />
+        <h1 id="headertext">PROJECT AVOCADO</h1>
+     </div> 
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form id="dataform" action="{{ url_for("predict")}}"method="post">  
+    <h2 >Per-unit Avocado Retail Price Calculator</h1>
+    <span>
+    <p>How many avocados are you selling?</p>
+    <input type="number" name="volume" placeholder="Example: 100" required="required" />  
+    </span>
+    <span>
+    <p>How many small avocados are you selling?</p>
+    <input type="number" name="4046" placeholder="Example: 60" required="required" /> 
+    </span>
+    <span> 
+    <p>How many medium avocados are you selling?</p>
+    <input type="number" name="4225" placeholder="Example: 30" required="required" />  
+    </span>
+    <span>
+    <p>How many large avocados are you selling?</p>
+    <input type="number" name="4770" placeholder="Example: 10" required="required" />  
+    </span>
+    <span>
+    <p>How many bags of avocados are you selling?</p>
+    <input type="number" name="bags" placeholder="Example: 25" required="required" />  
+    </span>
+    <span>
+    <p>What year are you selling your avocados in?</p>
+    <input type="number" name="year" placeholder="Example: 2021" required="required" />
+    </span>
+    <span>
+    <p>Please select your type of avocado:</p>
+    <input type="radio" id="type_organic" name="type" value="organic">
+    <label for="type_organic">Organic</label><br>
+    <input type="radio" id="type_conventional" name="type" value="conventional">
+    <label for="type_conventional">Conventional</label><br>
+    </span>
+    <span>
+    <p>Please select the region you are selling your avocados in: </p>
+    <input list="region" name="region" placeholder="Tip: Only use regions that are listed!">
+    <datalist id="region">
+      <option value= "Albany">
+      <option value= "Atlanta">
+      <option value= "BaltimoreWashington">
+      <option value= "Boise">
+      <option value= "Boston">
+      <option value="BuffaloRochester">
+      <option value= "California">
+      <option value= "Charlotte">
+      <option value= "Chicago">
+      <option value="CincinnatiDayton">
+      <option value= "Columbus">
+      <option value= "DallasFtWorth">
+      <option value= "Denver">
+      <option value="Detroit">
+      <option value= "GrandRapids">
+      <option value= "GreatLakes">
+      <option value= "HarrisburgScranton">
+      <option value="HartfordSpringfield">
+      <option value= "Houston">
+      <option value= "Indianapolis">
+      <option value= "Jacksonville">
+      <option value="LasVegas">
+      <option value= "LosAngeles">
+      <option value= "Louisville">
+      <option value= "MiamiFtLauderdale">
+      <option value="Midsouth">
+      <option value= "Nashville">
+      <option value= "NewOrleansMobile">
+      <option value= "NewYork">
+      <option value="Northeast">
+      <option value= "NorthernNewEngland">
+      <option value= "Orlando">
+      <option value= "Philadelphia">
+      <option value="PhoenixTucson">
+      <option value= "Pittsburgh">
+      <option value= "Plains">
+      <option value= "Portland">
+      <option value="RaleighGreensboro">
+      <option value= "RichmondNorfolk">
+      <option value= "Roanoke">
+      <option value= "Sacramento">
+      <option value="SanDiego">
+      <option value= "SanFrancisco">
+      <option value= "Seattle">
+      <option value= "SouthCarolina">
+      <option value="SouthCentral">
+      <option value= "Southeast">
+      <option value= "Spokane">
+      <option value= "StLouis">
+      <option value= "Syracuse">
+      <option value="Tampa">
+      <option value= "West">
+      <option value= "WestTexNewMexico">
+    </datalist>
+    </span>
+    <button id="submitbutton" type="submit">Calculate!</button>
+    </form>
+
+   <br>
+   <br>
+   <div id="prediction">
+      <span id="alwayspred">{{ prediction_text }}</span>
+      <span id="valuepred">{{prediction_value}}</span>
+    </div>
+ </div>
+
+
+</body>
+</html>
